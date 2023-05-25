@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Youtube video downloader</h1>
+
+
+<form method="post">
+    {% csrf_token %}
+
+    <label for="link">Enter URL:</label>
+    <input type="text" id="link" name="link"><br><br>
+    <input type="submit" value="Submit">
+</form>
+{% for message in messages %}
+    <div class="alert alert-primary" role="alert">
+      {{message}}
+    </div>
+{% endfor %}
+</body>
+</html>

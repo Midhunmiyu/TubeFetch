@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{% load static %}
+<head>
+	<title>TubeFetch</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	
+	
+	<!-- Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Frijole&family=Lemon&family=Rye&display=swap" rel="stylesheet">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Lemon&family=Rye&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Lemon&display=swap" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500" rel="stylesheet">
+	
+	
+	<link href=" {% static 'common-css/ionicons.css' %} " rel="stylesheet">
+	
+	
+	<link rel="stylesheet" href=" {% static 'common-css/jquery.classycountdown.css' %} " />
+		
+	<link href=" {% static '04-comming-soon/css/styles.css' %} " rel="stylesheet">
+	
+	<link href=" {% static '04-comming-soon/css/responsive.css' %} " rel="stylesheet">
+	
+</head>
+<body>
+	
+	<div class="main-area">
+		
+		<section class="left-section" style="background-image: url( {% static 'images/a.jpg' %} )">
+		
+			
+		</section><!-- left-section -->
+		
+		
+		<section class="right-section full-height">
+		
+			<a class="logo" href="#"><h2 style="font-family: 'Creepster', cursive;font-family: 'Lemon', cursive;">Tube<span style="color:red;font-family: 'Creepster', cursive;
+			font-family: 'Lemon', cursive;">Fetch</span></h2></a>
+			
+			<div class="display-table">
+				<div class="display-table-cell">
+					<div class="main-content">
+						<h3 class="title"><b>Now Downloading Is Easy</b></h3>
+						<p class="desc" style="font-family: 'Creepster', cursive;font-family: 'Lemon', cursive;font-family: 'Rye', cursive;">Paste Here The URL Of The Video You Want To Download And Wait For The Page To Load</p>
+
+						<div class="email-input-area">
+							<form method="post">
+								{% csrf_token %}
+								<label for="link" style="font-family: 'Creepster', cursive;font-family: 'Lemon', cursive;">Enter URL:</label>
+    							<input type="text" id="link" name="link">
+								<button class="submit-btn"  type="submit" style="font-family: 'Creepster', cursive;font-family: 'Lemon', cursive;height:30px;background:#e40b52;"><b>Download</b></button>
+							</form>
+							<br><br>
+							{% for message in messages %}
+								<div class="alert alert-primary" role="alert">
+								  {{message}}
+								</div>
+							{% endfor %}
+						</div><!-- email-input-area -->
+						
+
+					</div><!-- main-content -->
+				</div><!-- display-table-cell -->
+			</div><!-- display-table -->
+			
+
+		
+		</section><!-- right-section -->
+		
+	</div><!-- main-area -->
+	
+	<!-- SCIPTS -->
+	
+	<script src=" {% static 'common-js/jquery-3.1.1.min.js' %} "></script>
+	
+	<script src=" {% static 'common-js/jquery.countdown.min.js' %} "></script>
+	
+	<script src=" {% static 'common-js/scripts.js' %} "></script>
+	
+</body>
+</html>
